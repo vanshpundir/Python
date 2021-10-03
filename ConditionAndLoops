@@ -1,0 +1,162 @@
+#1 CheckNumber
+n = int(input())
+if n<0:
+	print("Negative")
+elif n > 0:
+	print("Positive")
+else:
+	print("Zero")
+  
+#2 Sum of n numbers
+n = int(input())
+firstdigit = 1
+container = 0
+while firstdigit <= n:
+    container = container + firstdigit
+    firstdigit = firstdigit + 1
+print(container)
+
+
+
+#3 SumOFEvenNumbers
+
+N = int(input())
+empt = 0
+for i in range(0,N+1,2):
+    empt  = empt + i
+print(empt)
+
+
+
+
+
+#4 Fahrenhiet to celsius
+
+S = int(input())
+E = int(input())
+W = int(input())
+
+for i in range(S,E,W):
+    store = (i - 32) / 1.8
+    print(i, "\t",int(store))
+    
+    
+
+
+
+
+#5 Calculator
+
+
+takeinput = int(input())
+while True:
+    if takeinput == 1:
+        a = int(input())
+        b = int(input())
+        print(a + b)
+    elif takeinput == 2:
+        a = int(input())
+        b = int(input())
+        print(a - b)
+    elif takeinput == 3:
+        a = int(input())
+        b = int(input())
+        print(a*b)
+    elif takeinput == 4:
+        a = int(input())
+        b = int(input())
+        print(a//b)
+    elif takeinput == 5:
+        a = int(input())
+        b = int(input())
+        print(a % b)
+    elif takeinput == 6:
+        exit()
+    else:
+        print("Invalid Operation")
+    takeinput = int(input())
+
+
+
+#6 reverse of a number
+
+
+def reverse(n):
+    a = str(n)[::-1]
+    return int(a)
+    
+
+
+n=int(input())
+result = reverse(n)
+print(result)
+
+
+
+
+
+
+#7  Palindrome Number
+def checkPalindrome(num):
+    a = str(num)[::-1]
+    b = str(num)[:]
+    if int(a) == int(b):
+        return True
+    else:
+        return False
+        
+#Implement Your Code Here
+		
+num = int(input())
+isPalindrome = checkPalindrome(num)
+if(isPalindrome):
+	print('true')
+else:
+	print('false')
+
+
+
+#8  SumOfEvenAndOdd
+
+a = input()
+summ  = 0
+summ2 = 0
+for i in a:
+    z = int(i)
+    if z % 2 == 0:
+        
+        summ = summ + z
+    else:
+        summ2 = summ2 + z
+print(summ, '',summ2)
+
+
+#9 Nth fibonacci number
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n = int(input())
+def fibonacci(n):
+    a=0
+    b=1
+    c=-1
+    i=1
+    while i<=n:
+        c=a+b
+        a=b
+        b=c
+        i+=1
+    return a     
+    
+print(fibonacci(n)) 
+
+"""n= int(input())
+def fibonac(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return fibonac(n-1) + fibonac(n-2)
+print(fibonac(n))
+"""
