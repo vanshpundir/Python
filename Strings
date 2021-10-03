@@ -2,11 +2,8 @@
 
 
 from sys import stdin
-
-
 def isPalindrome(string) :
 	return string == string[::-1]
-#main
 string = stdin.readline().strip();
 ans = isPalindrome(string)
 
@@ -16,8 +13,10 @@ else :
     print('false')
     
     
+    
+    
+    
 #2  remove character
-
 from sys import stdin
 def removeAllOccurrencesOfChar(string, ch) :
 	b = string.replace(ch, '')
@@ -25,7 +24,81 @@ def removeAllOccurrencesOfChar(string, ch) :
 string = stdin.readline().strip()
 ch = stdin.readline().strip()[0]
 ans = removeAllOccurrencesOfChar(string, ch)
+print(ans)
+
+
+
+
+
+
+#3 Reverse Each Word
+from sys import stdin
+
+
+def reverseEachWord(string) :
+	l = string.split()
+	for i in l:
+		print(i[::-1],end = ' ')
+	return ''
+string = stdin.readline().strip()
+
+ans = reverseEachWord(string)
 
 print(ans)
 
-#3
+
+
+
+
+
+#4 highest occuring character
+
+
+
+
+
+# import collections
+# from collections import Counter
+# from sys import stdin
+
+
+# def highestOccuringChar(string) :
+# 	b =dict(Counter(string).items())
+# 	v = list(b.values())
+# 	k = list(b.keys())
+# 	print(k[v.index(max(v))])
+# 	return''
+
+# #main
+# string = stdin.readline().strip();
+# ans = highestOccuringChar(string)
+
+# print(ans)
+from sys import stdin
+
+
+def highestOccuringChar(string) :
+	#Your code goes here
+    if len(string)<=2:
+        return string[0]
+    else:
+        max=0
+        me=0
+        for i in string:
+            c=string.count(i)
+            if c>max:
+                max=c
+                me=i
+            else:
+                string=string.replace(i,'')
+        return me
+        
+#main
+string = stdin.readline().strip();
+ans = highestOccuringChar(string)
+print(ans)
+
+
+#5
+
+
