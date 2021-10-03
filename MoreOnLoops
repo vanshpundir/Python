@@ -1,0 +1,139 @@
+#1  Binary Pattern
+
+n = int(input())
+for i in range(n):
+    for j in range(n-i, 0,-1):
+        if i in range(1,n,2) :
+            print(0,end = '')
+        if i in range(1,n,2) :
+            continue
+        print(1, end = '')
+        
+                   
+        
+    print()
+
+
+
+#2 PrintNumber Pyramid
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+t=(n+1)//2
+i=1
+while i<=n:
+    if i<=t:
+        s=1
+        while s<=t-i:
+            print(' ',end='')
+            s+=1
+        j=1
+        while j<=i:
+            print('*',end='')
+            j+=1
+        k=i-1
+        while k>=1:
+            print('*',end='')
+            k-=1
+    else :
+        s=i-t
+        while s>=1:
+            print(' ',end='')
+            s-=1
+        j=i
+        while j<=n:
+            print('*',end='')
+            j+=1
+        k=i+1
+        while k<=n:
+            print('*',end='')
+            k+=1
+    i+=1
+    print()
+
+
+
+
+#3 Diamonds of stars ...this is using whileloop
+
+
+n=int(input())
+t=(n+1)//2
+i=1
+while i<=n:
+    if i<=t:
+        s=1
+        while s<=t-i:
+            print(' ',end='')
+            s+=1
+        j=1
+        while j<=i:
+            print('*',end='')
+            j+=1
+        k=i-1
+        while k>=1:
+            print('*',end='')
+            k-=1
+    else :
+        s=i-t
+        while s>=1:
+            print(' ',end='')
+            s-=1
+        j=i
+        while j<=n:
+            print('*',end='')
+            j+=1
+        k=i+1
+        while k<=n:
+            print('*',end='')
+            k+=1
+    i+=1
+    print()
+
+
+
+
+#4 Rectangular Numbers
+
+n = int(input())
+for i in range(1,2*n):
+    k = n
+    for j in range(1,2*n):
+        print(k,end = '')
+        if j<i:
+            k = k-1
+        if j>=2*n-i:
+            k = k + 1
+    print("")
+
+
+
+
+#5 Print the Pattern
+
+
+n = int(input())
+count = 0
+for i in range(1,(n+1)//2+1):
+    start = count*n + 1
+    for j in range(1,n+1):
+        print(start,end = ' ')
+        start = start +1
+    count = count +2
+    print()
+
+if(n%2==0):
+    count = n-1
+else:
+    count= n-2
+for i in range(1,(n-(n+1)//2)+1):
+	start = count*n + 1
+	for j in range(1,n+1):
+		print(start,end = ' ')
+		start = start +1
+	count = count - 2
+	print()
+
+
+
