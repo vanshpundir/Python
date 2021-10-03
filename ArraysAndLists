@@ -1,0 +1,395 @@
+#1 Array Sum
+
+n = int(input())
+a = map(int, input().split())
+sum = 0
+for i in a:
+    sum += i
+print(sum)
+
+
+#2 Swap Alternate
+
+from sys import stdin
+
+def swapAlternate(arr , n):
+    for i in range(0,len(arr)-1,2):
+        arr[i],arr[i+1] =arr[i+1], arr[i]
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#Printing the array/list
+def printList(arr, n) :
+    for i in range(n) :
+        print(arr[i], end = " ")
+    print()
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+    arr, n = takeInput()
+    if n != 0 :
+        swapAlternate(arr, n)
+        printList(arr, n)
+    t -= 1
+
+
+#3 Find unique 
+
+
+import sys
+import collections
+from collections import Counter
+def findUnique(arr, n) :
+    ma = Counter(arr)
+    a = dict(ma)
+    print(list(ma.keys())[list(ma.values()).index(1)])
+    return ''
+    
+
+    	 
+        
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(sys.stdin.readline().rstrip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, sys.stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#main
+t = int(sys.stdin.readline().rstrip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    print(findUnique(arr, n))
+
+    t -= 1
+
+
+
+#4 Find duplicate
+
+
+
+import sys
+import collections
+from collections import Counter
+def duplicateNumber(arr, n) :
+    ma = Counter(arr)
+    a = dict(ma)
+    for i,j in a.items():
+        if j>1:
+            return i
+        
+        
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(sys.stdin.readline().strip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, sys.stdin.readline().strip().split()))
+    return arr, n
+
+
+#main
+t = int(sys.stdin.readline().strip())
+
+while t > 0 :
+    
+    arr, n = takeInput()
+    print(duplicateNumber(arr, n)) 
+
+    t -= 1
+    
+
+
+
+#5 Array INtersection
+
+
+import sys
+def intersection(arr1,n,arr2,m):
+    
+    for i in range(n):
+        c=0
+        for j in range(m):
+            if arr1[i]==arr2[j]:
+                arr2[j]=sys.maxsize
+                c=c+1
+                break
+           
+        if c==1:
+            print(arr1[i],end=" ")
+    print()
+
+
+t=int(input())
+while(t>0):
+    n=int(input())
+    if n>0:
+        arr1=[int(x) for x in input().split()]
+    m=int(input())
+    if m>0:
+        arr2=[int(y) for y in input().split()]
+    if m>0 and n>0:
+        intersection(arr1,n,arr2,m)
+    t=t-1
+
+
+
+
+#6 Pair sum
+
+
+
+from sys import stdin
+
+
+def pairSum(arr, n, x) :
+    count = 0  # Initialize result
+ 
+    # Consider all possible pairs
+    # and check their sums
+    for i in range(0, n):
+        for j in range(i + 1, n):
+            if arr[i] + arr[j] == x:
+                count += 1
+ 
+    return count
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().strip())
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+
+#main
+t = int(stdin.readline().strip())
+
+while t > 0 :
+    
+    arr, n = takeInput()
+    x = int(stdin.readline().strip())
+    print(pairSum(arr, n, x))
+
+    t -= 1
+
+
+
+#7 Triple sum
+
+from sys import stdin
+
+def findTriplet(arr, n, x) :
+    count = 0  # Initialize result
+ 
+    # Consider all possible pairs
+    # and check their sums
+    for i in range(0, n):
+        for j in range(i + 1, n):
+            for z in range(j+1,n):
+                if arr[i] + arr[j] +arr[z] == x:
+                	count += 1
+ 
+    return count
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().strip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+
+
+#main
+t = int(stdin.readline().strip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    x = int(stdin.readline().strip())
+    print(findTriplet(arr, n, x))
+    t -= 1
+
+
+#8  Sort 0 1
+
+from sys import stdin
+
+# def sortZeroesAndOne(arr, n) :
+#     li=[]
+#     for i in arr:
+#         if i == 0:
+#             li.append(0)
+            
+#     for j in arr:
+#         if j == 1:
+#             li.append(1)
+            
+#     for k in li:
+#         print(k, end = ' ')
+def sortZeroesAndOne(arr, n) :
+    index = 0
+    indexR = n-1
+    while(indexR>index):
+        if arr[index]==1:
+            arr[indexR],arr[index]=arr[index],arr[indexR]
+            indexR = indexR-1
+        else:
+            index = index+1
+            
+        
+    return arr
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().strip())
+
+    if n == 0 :
+        return list(), 0
+
+    
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+
+def printList(arr, n) :
+    for i in range(n) :
+        print(arr[i], end = ' ')
+    print()
+
+
+#main
+t = int(stdin.readline().strip())
+
+while t > 0 :
+    
+    arr, n = takeInput()
+    sortZeroesAndOne(arr, n)
+    printList(arr, n)
+    print()
+
+    t -= 1
