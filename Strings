@@ -16,4 +16,16 @@ else :
     print('false')
     
     
-#2  
+#2  remove character
+
+from sys import stdin
+def removeAllOccurrencesOfChar(string, ch) :
+	b = string.replace(ch, '')
+	return b
+string = stdin.readline().strip()
+ch = stdin.readline().strip()[0]
+ans = removeAllOccurrencesOfChar(string, ch)
+
+print(ans)
+
+#3
