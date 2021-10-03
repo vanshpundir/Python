@@ -1,0 +1,81 @@
+#1 Fahrenhiet to celsius 
+
+
+def printTable(s,e,step):
+#Implement Your Code Here
+    for i in range(s,e ,step):
+        c = (i - 32)/1.8
+        print( i , '\t',  int(c))
+
+   
+s = int(input())
+e = int(input())
+step = int(input())
+printTable(s,e,step)
+
+
+
+#2 Fibonacci Member
+
+def checkMember(n):
+    a = 0;
+    b = 1;
+    if (n==a or n==b):
+        return True
+    c = a+b
+    while(c<=n):
+            
+        if(c == n):
+            return True
+        a = b
+        b = c
+        c = a + b
+           
+    return False
+       
+
+n=int(input())
+if(checkMember(n)):
+    print("true")
+else:
+    print("false")
+
+
+
+
+
+#3 palindrome Number
+
+def checkPalindrome(num):
+     
+	return str(num) == str(num)[::-1]
+		
+num = int(input())
+isPalindrome = checkPalindrome(num)
+if(isPalindrome):
+	print('true')
+else:
+	print('false')
+
+
+
+
+
+
+
+
+ #4 Check Armstrong
+ 
+ def armstrong():
+    a = input()
+    b = len(a)
+    c = 0
+    for i in a:
+        sum1 = int(i) ** b 
+        c = c + sum1
+    if c == int(a) or c == 1:
+        
+        print("true")
+    else:
+        print("false")
+armstrong()
