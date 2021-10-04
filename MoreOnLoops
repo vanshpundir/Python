@@ -17,40 +17,28 @@ for i in range(n):
 
 #2 PrintNumber Pyramid
 
-## Read input as specified in the question.
-## Print output as specified in the question.
-n=int(input())
-t=(n+1)//2
-i=1
-while i<=n:
-    if i<=t:
-        s=1
-        while s<=t-i:
-            print(' ',end='')
-            s+=1
-        j=1
-        while j<=i:
-            print('*',end='')
-            j+=1
-        k=i-1
-        while k>=1:
-            print('*',end='')
-            k-=1
-    else :
-        s=i-t
-        while s>=1:
-            print(' ',end='')
-            s-=1
-        j=i
-        while j<=n:
-            print('*',end='')
-            j+=1
-        k=i+1
-        while k<=n:
-            print('*',end='')
-            k+=1
-    i+=1
+n = int(input())
+for i in range(1,n+1):
+    spaces = 0
+    while spaces < i-1:
+        print(' ', end = '')
+        spaces = spaces +1
+    j =i
+    while j<=n:
+        print(j, end = '')
+        j=j+1
     print()
+for i in range(n-1, 0,-1):
+    spaces = i -1
+    while spaces>0:
+        print(" ", end = '')
+        spaces -=1
+    j = i
+    while j<=n:
+        print(j, end = '')
+        j+=1
+    print()
+
 
 
 
