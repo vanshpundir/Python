@@ -1,0 +1,297 @@
+***********************************************************************************************************************
+******************IMPORTANT KINDLY DONT DELETE THE PREWRITTEN CODE*****************************************************
+***********************************************************************************************************************
+#Binary Search
+def binarySearch(arr, n, x) :
+    lower_bound = 0
+    upper_bound = len(arr)-1
+    while lower_bound <= upper_bound:
+        middle = (lower_bound + upper_bound )//2
+        if x == arr[middle]:
+            return middle
+            
+        elif x > arr[middle]:
+            lower_bound = middle + 1
+        else:
+            upper_bound = middle -1
+    return -1
+
+
+        
+#Selection Sort
+
+def selectionSort(arr, n) :
+	for i in range(len(arr)):
+		min_idx = i
+		for j in range(i+1, len(arr)):
+			if arr[min_idx] >arr[j]:
+				min_idx = j
+             
+    # Swap the found minimum element with
+    # the first element       
+		arr[i], arr[min_idx] = arr[min_idx], arr[i]
+	return arr
+  
+  
+ # BUBBLE SORT
+ 
+def bubbleSort(arr, n) :
+    #Your code goes here
+
+
+	for i in range(len(arr)):
+		min_idx = i
+		for j in range(i+1, len(arr)):
+			if arr[min_idx] >arr[j]:
+				min_idx = j
+             
+    # Swap the found minimum element with
+    # the first element       
+		arr[i], arr[j] = arr[j], arr[i]
+	return arr
+
+# CODE INSERRTION SORT
+
+def insertionSort(arr, n) :  
+	length = len(arr)
+	for i in range(1,length):
+		j = i-1
+		temp = arr[i]
+      
+		while (j>=0 and arr[j]>temp):
+			arr[j+1] = arr[j]
+			j = j -1
+        
+		arr[j+1] = temp
+    
+    
+#COde merge two sorted arrays
+
+
+def merge(arr1, n, arr2, m) : 
+    arr3 = []
+    i = 0
+    j = 0
+    while (i < len(arr1) and j < len(arr2)):
+    	if arr1[i]< arr2[j]:
+    		arr3.append(arr1[i])
+    		i = i +1
+    	else:
+    		arr3.append(arr2[j])
+    		j =j +1
+
+    while i < len(arr1):
+    	arr3.append(arr1[i])
+    	i = i +1		
+    while j < len(arr2):
+    	arr3.append(arr2[j])
+    	j = j + 1
+    return arr3
+
+
+
+
+# PUSH ZEROS TO END
+
+
+def pushZerosAtEnd(arr, n) :
+
+    count = 0 # Count of non-zero elements
+     
+    # Traverse the array. If element
+    # encountered is non-zero, then
+    # replace the element at index
+    # 'count' with this element
+    for i in range(n):
+        if arr[i] != 0:
+             
+            # here count is incremented
+            arr[count] = arr[i]
+            count+=1
+     
+    # Now all non-zero elements have been
+    # shifted to front and 'count' is set
+    # as index of first 0. Make all
+    # elements 0 from count to end.
+    while count < n:
+        arr[count] = 0
+        count += 1
+
+
+# ROTATE ARRAY
+
+
+
+def pushZerosAtEnd(arr, n) :
+	temp = []
+	d=int(input())
+	i = 0
+	while (i < d):
+		temp.append(arr[i])
+		i = i + 1
+	i = 0
+	while (d < n):
+		arr[i] = arr[d]
+		i = i + 1
+		d = d + 1
+	arr[:] = arr[: i] + temp
+	return arr
+
+
+
+
+#SECOND LARGEST IN ARRAY
+
+
+def secondLargestElement(arr, n):
+	if not arr:
+		return -2147483648
+	new_list = sorted(arr)
+	s = list(set(new_list))
+	for i in range(len(s)):
+
+		if len(s) != 1:
+			return s[-2]
+		else:
+			return -2147483648
+
+ 
+# CHECK ARRAY ROTATION
+
+def arrayRotateCheck(arr, n):
+	if n == 0 :
+		return 0
+	else:
+		b = arr.index(min(arr))
+	return b
+    
+    
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+    if n == 0:
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    print(arrayRotateCheck(arr, n))
+
+    t -= 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+#SORT012
+
+
+def sort012(arr, n) :
+    nextZero = 0
+    nextTwo = (n - 1)
+    i = 0
+
+    while i <= nextTwo :
+        if arr[i] == 0 :
+            temp = arr[nextZero]
+            arr[nextZero] = arr[i]
+            arr[i] = temp
+            i += 1
+            nextZero += 1
+            
+        elif arr[i] == 2 :
+            temp = arr[nextTwo]
+            arr[nextTwo] = arr[i]
+            arr[i] = temp
+            nextTwo -= 1
+
+        else :
+            i += 1
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+ # sum of two arrays
+ 
+ 
+ def sumOfTwoArrays(arr1, n, arr2, m, output):
+    i = n - 1 
+    j = m - 1 
+    carry = 0 
+    k = max(n, m) 
+    while i >= 0 and j >= 0 : 
+        SUM = arr1[i] + arr2[j] + carry 
+        output[k] = SUM % 10 
+        carry = SUM // 10 
+        i -= 1 
+        j -= 1 
+        k -= 1 
+    while i >= 0 : 
+        SUM = arr1[i] + carry 
+        output[k] = SUM % 10 
+        carry = SUM // 10 
+        i -= 1 
+        k -= 1 
+    while j >= 0 : 
+        SUM = arr2[j] + carry 
+        output[k] = SUM % 10 
+        carry = SUM // 10 
+        j -= 1 
+        k -= 1 
+    output[0] = carry
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
