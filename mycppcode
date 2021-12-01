@@ -1,0 +1,25 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+
+class Car{
+    public:
+    
+        string color;
+        int doors;
+        int wheels;
+        Car(string ccolor, int cdoors, int cwheels){
+        color = ccolor;
+        doors = cdoors;
+        wheels = cwheels;
+        
+    }
+};
+
+int main() {
+    // Write C++ code here
+    Car maserati("red",4,4);
+    cout<<maserati.doors<<endl;
+    return 0;
+}
