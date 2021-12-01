@@ -1,0 +1,29 @@
+from tkinter import *
+
+OPTIONS = [
+"Encrypted",
+"Decrypted"
+] #etc
+
+master = Tk()
+var = StringVar(master)
+entry = Entry(master,textvariable =var)
+entry.pack()
+variable = StringVar(master)
+variable.set(OPTIONS[0]) # default value
+
+w = OptionMenu(master, variable, *OPTIONS)
+w.pack()
+
+def ok():
+    if variable.get() == "Encrypted":
+        a = var.get()
+        print(a)
+    else:
+        
+        print("Decrypted!!")
+
+button = Button(master, text="OK", command=ok)
+button.pack()
+
+master.mainloop()
